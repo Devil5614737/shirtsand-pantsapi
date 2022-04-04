@@ -271,7 +271,7 @@ app.get("/shirts", (req, res) => {
   res.status(200).send(shirts);
 });
 
-app.use("/:id", (req, res) => {
+app.use("/shirts/:id", (req, res) => {
   let filtered = shirts.filter((item) => {
     return item.id == req.params.id;
   });
