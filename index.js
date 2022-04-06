@@ -281,6 +281,12 @@ app.use("/shirts/:id", (req, res) => {
 app.get("/pants", (req, res) => {
   res.status(200).send(pants);
 });
+app.get("/pants/:id", (req, res) => {
+  let filtered = pants.filter((item) => {
+    return item.id == req.params.id;
+  });
+  res.status(200).json(filtered);
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
